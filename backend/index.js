@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const http = require("http");
 const { initSocket } = require("./socket/socket");
-import path from "path";
+const path = require("path");
 dotenv.config();
 
 const app = express();
@@ -29,9 +29,9 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/message", messageRoute);
 app.use("/uploads", express.static("uploads"));
  
-app.use(express.static(path.join(_dirname,"/frontend/frontend/dist")));
-app.get('*',(req ,res)=>{
-  res.sendFile(path.resolve(_dirname,"/frontend/frontend","dist","index.html"))
+app.use(express.static(path.join(_dirname,"frontend/dist")));
+app.get('*',(_,res)=>{
+  res.sendFile(path.resolve(_dirname,"frontend","dist","index.html"))
 });
 connectDB();
 

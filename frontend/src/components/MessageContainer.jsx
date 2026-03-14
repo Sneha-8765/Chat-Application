@@ -3,7 +3,9 @@ import { SendInput } from "./SendInput";
 import Messages from "./Messages";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelecteduser } from "../redux/userSlice";
+import useGetRealTimeMessages from "../hooks/useGetRealTimeMessages";
 const MessageContainer = () => {
+   useGetRealTimeMessages();
   const { selectedUser, authUser } = useSelector((store) => store.user);
   const dispatch = useDispatch();
   useEffect(() => {

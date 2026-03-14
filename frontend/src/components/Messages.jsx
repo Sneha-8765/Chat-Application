@@ -1,11 +1,11 @@
 import React from 'react'
 import Message from './Message'
-import useGetRealTimeMessages from '../hooks/useGetRealTimeMessages'
+//import useGetRealTimeMessages from '../hooks/useGetRealTimeMessages'
 import { useSelector } from "react-redux";
 import useGetMessages from "../hooks/useGetMessages";
 const Messages = () => {
    useGetMessages();
-  useGetRealTimeMessages();
+  //useGetRealTimeMessages();
 
   const { messages } = useSelector((store) => store.message);
 

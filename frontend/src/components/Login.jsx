@@ -33,7 +33,8 @@ const Login = () => {
       toast.success("Login Successful 🎉");
 
       dispatch(setAuthUser(res.data));
-      connectSocket(res.data._id);  // 
+      
+      connectSocket(res.data.user._id);  // 
       navigate("/");   // or navigate("/home") 
 
     } catch (error) {
