@@ -21,9 +21,9 @@ app.use(cors({
   credentials: true
 }));
 
-app.get("/", (req, res) => {
-  res.send("SERVER WORKING");
-});
+// app.get("/", (req, res) => {
+//   res.send("SERVER WORKING");
+// });
 
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/message", messageRoute);

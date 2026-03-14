@@ -10,11 +10,11 @@ import { setOnlineUsers } from "./redux/userSlice";
 import "./App.css";
 
 const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
+  { path: "/", element: <Login /> },
   { path: "/register", element: <Signup /> },
   { path: "/login", element: <Login /> },
+  { path: "/home", element: <HomePage /> },
 ]);
-
 function App() {
   const socketRef = useRef(null);
   const { authUser } = useSelector((store) => store.user);
@@ -23,7 +23,7 @@ function App() {
 
 useEffect(() => {
   if (authUser) {
-    socketRef.current = io("http://localhost:5000", {
+    socketRef.current = io("https://chat-application-1n71.onrender.com", {
       query: { userId: authUser._id }
     });
 
