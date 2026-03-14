@@ -7,11 +7,12 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const http = require("http");
 const { initSocket } = require("./socket/socket");
-
+import path from "path";
 dotenv.config();
 
 const app = express();
 const server = http.createServer(app); // ✅ create HTTP server
+const _dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser());
@@ -27,7 +28,11 @@ app.get("/", (req, res) => {
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/message", messageRoute);
 app.use("/uploads", express.static("uploads"));
-
+ 
+app.use(express.static(path.join(_dirname,"/frontend/frontend/dist")));
+app.get('*',(req ,res)=>{
+  res.sendFile(path.resolve(_dirname,"/frontend/frontend","dist","index.html"))
+});
 connectDB();
 
 initSocket(server); // ✅ attach socket
