@@ -15,7 +15,7 @@ const Messages = () => {
   }
 
   return (
-    <div className='flex-1 overflow-y-auto p-4'>
+    <div className="flex-1 overflow-y-auto p-4 space-y-2">
       {messages.map((message) => (
         <Message key={message._id} message={message} />
       ))}

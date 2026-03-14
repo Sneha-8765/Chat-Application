@@ -83,7 +83,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className='border-r border-slate-500 p-4 flex flex-col w-full md:w-[350px]'>
+    <div className="border-r border-slate-500 p-4 flex flex-col w-full md:w-[320px] lg:w-[350px]">
 
       {/* Logged in user avatar (WhatsApp style) */}
       <div className="flex items-center gap-3 mb-4">
