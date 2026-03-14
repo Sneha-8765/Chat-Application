@@ -7,7 +7,7 @@ const initSocket = (server) => {
 
     io = new Server(server, {
         cors: {
-            origin: "https://chat-application-1n71.onrender.com",
+            origin: ["http://localhost:5173", "https://your-frontend-url.vercel.app"],
             methods: ["GET", "POST"]
         },
         transports: ["websocket"]
