@@ -9,7 +9,8 @@ const initSocket = (server) => {
         cors: {
             origin: "https://chat-application-1n71.onrender.com",
             methods: ["GET", "POST"]
-        }
+        },
+        transports: ["websocket"]
     });
 
     io.on("connection", (socket) => {

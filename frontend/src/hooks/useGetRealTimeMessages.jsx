@@ -5,7 +5,7 @@ import { getSocket } from "../socket";
 
 const useGetRealTimeMessages = () => {
   const dispatch = useDispatch();
-  const { authUser, selectedUser } = useSelector((store) => store.user);
+  const { selectedUser } = useSelector((store) => store.user);
 
   useEffect(() => {
     const socket = getSocket();
@@ -13,17 +13,17 @@ const useGetRealTimeMessages = () => {
 
     const handleNewMessage = (newMessage) => {
 
-      // show message only if it belongs to currently open chat
-      if (
-        selectedUser &&
-        (
-          (newMessage.senderId === selectedUser._id && newMessage.receiverId === authUser._id) ||
-          (newMessage.senderId === authUser._id && newMessage.receiverId === selectedUser._id)
-        )
-      ) {
-        dispatch(addMessage(newMessage));
-      }
-    };
+  if (!selectedUser) return;
+
+  // show message if it belongs to current chat
+  if (
+    newMessage.senderId === selectedUser._id ||
+    newMessage.receiverId === selectedUser._id
+  ) {
+    dispatch(addMessage(newMessage));
+  }
+
+};
 
     socket.on("newMessage", handleNewMessage);
 
@@ -31,7 +31,7 @@ const useGetRealTimeMessages = () => {
       socket.off("newMessage", handleNewMessage);
     };
 
-  }, [dispatch, selectedUser, authUser]);
+  }, [dispatch, selectedUser]);
 };
 
 export default useGetRealTimeMessages;
