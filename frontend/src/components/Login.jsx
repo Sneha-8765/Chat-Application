@@ -35,7 +35,7 @@ const Login = () => {
 
       connectSocket(res.data._id);
 
-      navigate("/"); // or navigate("/home")
+      navigate("/home"); // or navigate("/home")
     } catch (error) {
       console.log(error);
 
