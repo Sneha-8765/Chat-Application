@@ -21,7 +21,7 @@ const MessageContainer = () => {
             {/* Avatar */}
             <div className="relative">
               <img
-                src={`http://localhost:5000${selectedUser?.profilePhoto}`}
+                src={`https://chat-application-1n71.onrender.com${selectedUser?.profilePhoto}`}
                 alt="user-profile"
                 className="w-12 h-12 rounded-full object-cover"
               />

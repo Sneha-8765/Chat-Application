@@ -30,7 +30,7 @@ const Message = ({ message }) => {
         <div className="w-10 rounded-full">
           <img
             alt="profile"
-            src={`http://localhost:5000${profilePhoto}`}
+            src={`https://chat-application-1n71.onrender.com${profilePhoto}`}
           />
         </div>
       </div>

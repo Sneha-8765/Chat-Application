@@ -17,7 +17,7 @@ const useGetMessages = () => {
       axios.defaults.withCredentials = true;
 
       const res = await axios.get(
-        `http://localhost:5000/api/v1/message/${selectedUser._id}`
+        `https://chat-application-1n71.onrender.com/api/v1/message/${selectedUser._id}`
       );
 
       console.log("Messages:", res.data);

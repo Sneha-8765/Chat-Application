@@ -11,7 +11,7 @@ const useGetOtherUsers = () => {
             try { 
                 axios.defaults.withCredentials=true;
                 const res = await axios.get(
-                    "http://localhost:5000/api/v1/user/"
+                    "https://chat-application-1n71.onrender.com/api/v1/user/"
                     
                 );
                 console.log(res);

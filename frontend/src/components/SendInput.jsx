@@ -20,7 +20,7 @@ export const SendInput = () => {
   try {
 
     const res = await axios.post(
-  `http://localhost:5000/api/v1/message/send/${selectedUser?._id}`,
+  `https://chat-application-1n71.onrender.com/api/v1/message/send/${selectedUser?._id}`,
   { message },
   { withCredentials: true }
 );

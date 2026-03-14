@@ -25,7 +25,7 @@ const OtherUser = ({ user }) => {
         <div className="avatar relative">
           <div className="w-14 rounded-full">
             <img
-              src={`http://localhost:5000${user?.profilePhoto}`}
+              src={`https://chat-application-1n71.onrender.com${user?.profilePhoto}`}
               alt="user-profile"
             />
           </div>
