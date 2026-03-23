@@ -1,4 +1,4 @@
-# 💬  Chat Application
+💬  Chat Application
 
 A real-time chat application built using the **MERN Stack** with **Socket.io** for instant messaging.
 
